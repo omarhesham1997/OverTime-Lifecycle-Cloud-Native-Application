@@ -14,15 +14,20 @@ cp FixedFile.pem temp.pem
 sed -e "1r temp1.pem" temp.pem > $UserName.pem
 rm -r temp.pem
 rm -r temp1.pem
-aws s3 cp "/home/ec2-user/$UserName.pem" s3://bastionkeypairs/
-sudo adduser $UserName --disabled-password
-sudo su -l $UserName
+aws s3 cp "/root/$UserName.pem" s3://bastionkeypairs/
+adduser $UserName
+cd /
+cd home/$UserName/
 mkdir .ssh
+chmod 700 .ssh
+chown $UserName .ssh
+chown :$UserName .ssh
+touch .ssh/authorized_keys
+chmod 600 .ssh/authorized_keys
 cd .ssh
-//error
-mv /home/ec2-user/$UserName.pem .
+mv /root/$UserName.pem .
+chmod 400 $UserName.pem
 ssh-keygen -y -f $UserName.pem > authorized_keys
+chown $UserName authorized_keys
+chown :$UserName authorized_keys
 rm -r $UserName.pem
-yes
-cd ../
-exit
