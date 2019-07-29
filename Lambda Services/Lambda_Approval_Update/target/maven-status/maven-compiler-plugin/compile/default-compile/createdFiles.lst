@@ -1,2 +1,2 @@
 com\amazonaws\lambda\demo\Input.class
-com\amazonaws\lambda\demo\LL.class
+com\amazonaws\lambda\demo\LambdaFunctionHandler.class

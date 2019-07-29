@@ -3,12 +3,26 @@ package com.amazonaws.lambda.demo;
 public class Input {
 	String month;
 	String year;
-	int empid;
+	String empid;
+	String choice;
 	public String getMonth() {
 		return month;
 	}
 	public void setMonth(String month) {
 		this.month = month;
+	}
+	
+	public String getEmpid() {
+		return empid;
+	}
+	public void setEmpid(String empid) {
+		this.empid = empid;
+	}
+	public String getChoice() {
+		return choice;
+	}
+	public void setChoice(String choice) {
+		this.choice = choice;
 	}
 	public String getYear() {
 		return year;
@@ -16,12 +30,7 @@ public class Input {
 	public void setYear(String year) {
 		this.year = year;
 	}
-	public int getEmpid() {
-		return empid;
-	}
-	public void setEmpid(int empid) {
-		this.empid = empid;
-	}
+
 	
 
 }
