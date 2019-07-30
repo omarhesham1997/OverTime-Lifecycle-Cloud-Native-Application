@@ -12,17 +12,19 @@ public class Emp implements java.io.Serializable {
     private int month;
     private int year;
     private int overtime;
-    boolean status;
     
-    public Emp() {
+    
+    
+
+	public Emp() {
     }
 
-    public Emp(int emp_id,int month,int year,int overtime,boolean status) {
+    public Emp(int emp_id,int month,int year,int overtime) {
         this.emp_id=emp_id;
         this.month = month;
         this.year=year;
         this.overtime=overtime;
-        this.status=status;
+       
     }
 
   @Id
@@ -61,23 +63,12 @@ public class Emp implements java.io.Serializable {
 
 	
 
-	public boolean isStatus() {
-		return status;
-	}
-
-	public void setStatus(boolean status) {
-		this.status = status;
-	}
-
-
-
-
     
 
    
 
     @Override
     public String toString() {
-        return "Employee { " + ", Month =" + month + ", Year =" + year + ", Overtime ="+ overtime + ", Employee ID ="+ emp_id +", Status="+ status +'}';
+        return "Employee { " + ", Month =" + month + ", Year =" + year + ", Overtime ="+ overtime + ", Employee ID ="+ emp_id  +'}';
     }
 }

@@ -6,20 +6,22 @@ public class Request {
 	public int month;
 	public int year;
 	public int overtime;
-	boolean status;
 	String content;
+
+	
+
+
 
 	public Request() {
 	}
 
 
 
-	public Request(int emp_id,int month,int year,int overtime,boolean status,String content) {
+	public Request(int emp_id,int month,int year,int overtime,String content) {
 		this.emp_id=emp_id;
 		this.month = month;
 		this.year=year;
 		this.overtime=overtime;
-		this.status=status;
 		this.content=content;
 	}
 
@@ -59,13 +61,9 @@ public class Request {
 
 
 
-	public boolean isStatus() {
-		return status;
-	}
+	
 
-	public void setStatus(boolean status) {
-		this.status = status;
-	}
+
 
 	public String getContent() {
 		return content;
@@ -82,6 +80,6 @@ public class Request {
 
 	@Override
 	public String toString() {
-		return "Employee { " + ", Month =" + month + ", Year =" + year + ", Overtime ="+ overtime + ", Employee ID ="+ emp_id +", Status="+ status +'}';
+		return "Employee { " + ", Month =" + month + ", Year =" + year + ", Overtime ="+ overtime + ", Employee ID ="+ emp_id +'}';
 	}
 }

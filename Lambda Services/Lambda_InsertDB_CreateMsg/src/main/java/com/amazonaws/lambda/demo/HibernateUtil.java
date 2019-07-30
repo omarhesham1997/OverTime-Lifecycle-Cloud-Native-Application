@@ -18,13 +18,14 @@ public class HibernateUtil {
         Configuration configuration = new Configuration();
 
         String jdbcUrl = "jdbc:mysql://"
-                + System.getenv("RDS_HOSTNAME")
+                + System.getenv("host_name")
                 + "/"
-                + System.getenv("RDS_DB_NAME");
+                + System.getenv("dbname");
+       
         
         configuration.setProperty("hibernate.connection.url", jdbcUrl);
-        configuration.setProperty("hibernate.connection.username", System.getenv("RDS_USERNAME"));
-        configuration.setProperty("hibernate.connection.password", System.getenv("RDS_PASSWORD"));
+        configuration.setProperty("hibernate.connection.username", System.getenv("user_name"));
+        configuration.setProperty("hibernate.connection.password", System.getenv("password"));
         configuration.addAnnotatedClass(Emp.class);
         configuration.configure();
         ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties()).build();
