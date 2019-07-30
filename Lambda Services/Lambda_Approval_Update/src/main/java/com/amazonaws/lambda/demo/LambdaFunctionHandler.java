@@ -51,7 +51,7 @@ public class LambdaFunctionHandler implements RequestHandler<Input, String> {
 		
 		
 		
-		return "Success";
+		return i.getChoice();
 	}
 
 }
