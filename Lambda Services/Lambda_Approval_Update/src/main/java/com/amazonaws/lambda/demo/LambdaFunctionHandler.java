@@ -1,4 +1,4 @@
-package com.amazonaws.lambda.demo;
+`package com.amazonaws.lambda.demo;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -44,7 +44,9 @@ public class LambdaFunctionHandler implements RequestHandler<Input, String> {
 			connect.close();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			//e.printStackTrace();
+			context.getLogger().log("Record entered does NOT exist !!");
+
 		} 
 		
 		
